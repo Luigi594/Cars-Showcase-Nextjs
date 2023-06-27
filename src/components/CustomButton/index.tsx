@@ -9,6 +9,8 @@ function CustomButton({
   containerStyles,
   handleClick,
   btnType,
+  textStyles,
+  rightIcon,
 }: ICustomButton) {
   return (
     <button
@@ -16,7 +18,13 @@ function CustomButton({
       type={btnType || "button"}
       className={`custom-btn ${containerStyles}`}
       onClick={handleClick}>
-      <span className={`flex-1`}>{title}</span>
+      <span className={`flex-1 ${textStyles}`}>{title}</span>
+
+      {rightIcon && (
+        <div className="relative">
+          <span className="text-white">{rightIcon}</span>
+        </div>
+      )}
     </button>
   );
 }
