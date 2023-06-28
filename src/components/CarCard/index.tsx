@@ -2,7 +2,7 @@
 
 import { ICarsInformation } from "@/types";
 import { useState } from "react";
-import { calculateCarPrice } from "@/utils";
+import { calculateCarPrice, generateCarImageUrl } from "@/utils";
 import { GiSteeringWheel, GiCarWheel, GiGasPump } from "react-icons/gi";
 import { BsArrowRightSquareFill } from "react-icons/bs";
 import Image from "next/image";
@@ -34,7 +34,7 @@ function CarCard({ data }: ICarCardProps) {
 
       <div className="relative w-full h-40 my-3 object-contain">
         <Image
-          src={"/hero.png"}
+          src={generateCarImageUrl(data)}
           alt="car model"
           fill
           priority

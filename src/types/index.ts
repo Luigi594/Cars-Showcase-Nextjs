@@ -29,3 +29,26 @@ export interface ICarsInformation {
   transmission: string;
   year: number;
 }
+
+export interface IFilterProps {
+  manufacturer: string;
+  year: number;
+  fuel: string;
+  limit: number;
+  model: string;
+}
+
+export interface OptionsProps {
+  title: string;
+  value: string;
+}
+
+export interface ICustomFilters {
+  title: string;
+  options: OptionsProps[];
+}
+
+export interface IShowMoreProps {
+  pageNumber: number;
+  isNext: boolean;
+}

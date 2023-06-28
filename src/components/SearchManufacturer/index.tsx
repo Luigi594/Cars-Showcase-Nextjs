@@ -4,6 +4,7 @@ import { ISearchManufacturer } from "@/types";
 import { Combobox, Transition } from "@headlessui/react";
 import { useState, Fragment } from "react";
 import { manufacturers } from "@/constants";
+import { SiVolkswagen } from "react-icons/si";
 
 function SearchManufacturer({
   manufacturer,
@@ -26,6 +27,10 @@ function SearchManufacturer({
     <div className="search-manufacturer">
       <Combobox value={manufacturer} onChange={setManufacturer}>
         <div className="relative w-full">
+          <Combobox.Button className="absolute top-4 ml-4">
+            <SiVolkswagen />
+          </Combobox.Button>
+
           <Combobox.Input
             className={"search-manufacturer__input"}
             placeholder="Volkswagen"

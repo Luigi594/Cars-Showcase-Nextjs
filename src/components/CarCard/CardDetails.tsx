@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import Image from "next/image";
+import { generateCarImageUrl } from "@/utils";
 
 interface ICarDetailsProps {
   isViewMore: boolean;
@@ -50,7 +51,7 @@ function CarDetails({ isViewMore, closeModal, car }: ICarDetailsProps) {
                   <div className="flex-1 flex flex-col gap-3">
                     <div className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg">
                       <Image
-                        src={"/hero.png"}
+                        src={generateCarImageUrl(car)}
                         alt="car model"
                         fill
                         priority
@@ -62,7 +63,7 @@ function CarDetails({ isViewMore, closeModal, car }: ICarDetailsProps) {
                     <div className="flex gap-3">
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src={"/hero.png"}
+                          src={generateCarImageUrl(car, "29")}
                           alt="car model"
                           fill
                           priority
@@ -72,7 +73,7 @@ function CarDetails({ isViewMore, closeModal, car }: ICarDetailsProps) {
 
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src={"/hero.png"}
+                          src={generateCarImageUrl(car, "33")}
                           alt="car model"
                           fill
                           priority
@@ -82,7 +83,7 @@ function CarDetails({ isViewMore, closeModal, car }: ICarDetailsProps) {
 
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src={"/hero.png"}
+                          src={generateCarImageUrl(car, "13")}
                           alt="car model"
                           fill
                           priority
