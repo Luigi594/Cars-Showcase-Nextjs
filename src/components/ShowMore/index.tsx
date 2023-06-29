@@ -4,6 +4,7 @@ import { IShowMoreProps } from "@/types";
 import { useRouter } from "next/navigation";
 import CustomButton from "../CustomButton";
 import { updateSearchParams } from "@/utils";
+import useMaintainScrollPosition from "@/hooks/useMaintainScrollPosition";
 
 function ShowMore({ pageNumber, isNext }: IShowMoreProps) {
   const router = useRouter();
@@ -11,7 +12,7 @@ function ShowMore({ pageNumber, isNext }: IShowMoreProps) {
   const handleNavigation = () => {
     const newLimit = (pageNumber + 1) * 10;
     const newPathName = updateSearchParams("limit", `${newLimit}`);
-
+    useMaintainScrollPosition();
     router.push(newPathName);
   };
 
